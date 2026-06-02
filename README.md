@@ -52,7 +52,14 @@ without a SaaS.
 
 **No install —** just open the **[web app](https://didrod205.github.io/calforge/)**.
 
-For the library:
+**Command line:**
+
+```bash
+npx @didrod2539/calforge --title "Standup" --start 2026-07-01T09:00:00 --duration 30 > standup.ics
+npx @didrod2539/calforge -t "Conf" --start 2026-09-10 --all-day --location Berlin --links
+```
+
+**Library:**
 
 ```bash
 npm install @didrod2539/calforge
@@ -62,6 +69,16 @@ npm install @didrod2539/calforge
 > import name matches the package name; everything else is identical.
 
 Zero dependencies. ESM + CJS + TypeScript types. Runs in the browser, Node, Deno and Bun.
+
+## CLI
+
+```bash
+calforge --title <t> --start <when> [options] > event.ics
+```
+
+Required: `-t/--title`, `--start` (ISO datetime, or `YYYY-MM-DD` for all-day).
+Options: `--end`, `--duration`, `--all-day`, `--location`, `--description`,
+`--url`, `--rrule`, `--alarm`, `--links` (print provider deep-links), `-o/--out`.
 
 ## Usage
 

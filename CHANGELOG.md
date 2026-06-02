@@ -6,6 +6,12 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0]
+
+### Added
+
+- **Command-line interface** (`calforge` bin), zero-dependency: build an .ics from flags (`--title`, `--start`, `--duration`/`--end`, `--all-day`, `--location`, `--rrule`, `--alarm`, …) to stdout or a file, or print Google/Outlook/Office365/Yahoo Add-to-Calendar links with `--links`.
+
 ## [0.1.0]
 
 ### Added
@@ -20,5 +26,6 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Free, local-only web app ("Add to Calendar" generator) deployed to GitHub Pages.
 - Zero runtime dependencies; ESM + CJS + TypeScript types.
 
-[Unreleased]: https://github.com/didrod205/calforge/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/didrod205/calforge/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/didrod205/calforge/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/didrod205/calforge/releases/tag/v0.1.0
